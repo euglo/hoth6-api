@@ -24,11 +24,22 @@ p {
 <h1>Places to Visit in LA! :)</h1>
 <h2> Using <em>Google Maps API</em> woohoo </h2>
 
+
+<script>
+//this function will load in our json that stores our images and the information about them
+async function getIcons() {
+  const response = await fetch('https://api.myjson.com/bins/17lqrk');
+  const icons = await response.json();
+  console.log(icons);
+  return icons;
+}
+</script>
+
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
 
-
+// this function will create our map and center it at myLatLng
 function myMap() {
 
   //Location of Map
@@ -40,42 +51,25 @@ function myMap() {
     center: myLatLng
   });
 
-//Star-Icon
-  var pandaImage = {
-    url: 'http://www.free-icons-download.net/images/cute-small-star-icon-34614.png',
-    scaledSize: {
-      width: 50,
-      height: 50
-    },
-  };
+//this calls our function which is responsible for drawing our markers
 
   setMarkers(map);
 }
 
 
-function setMarkers(map) {
+//This function is reponsible for drawing our markers and making their infoWindows
+async function setMarkers(map) {
 
-  var myimages = [
-    ['UCLA', 'http://www.free-icons-download.net/images/cute-small-star-icon-34614.png', {lat: 34.068921, lng: -118.4473698},
-        'http://my.ucla.edu', 'https://www.wallpaperup.com/uploads/wallpapers/2013/10/19/162678/a76e1c05f55d7df97fa1c5d4d218951a-700.jpg'],
+  const icons = await getIcons();
 
-    ['GETTY', 'http://cdn.shopify.com/s/files/1/1061/1924/products/Heart_Eyes_Emoji_grande.png?v=1480481053', {lat: 34.0677051, lng: -118.4670609},
-        'http://www.getty.edu/', 'https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Natural-Dog-Law-2-To-dogs%2C-energy-is-everything.jpg?itok=Z-ujUOUr'],
-
-    ['USC SUCKS', 'https://cdn4.iconfinder.com/data/icons/reaction/32/angry-512.png', {lat: 34.021881, lng: -118.4620083},
-        'https://www.youtube.com/watch?v=gl1aHhXnN1k', 'https://www.dailynews.com/wp-content/uploads/2018/12/USC-logo-zont2.jpg?w=560']
-  ];
-
-
-
-  for (var i = 0; i < myimages.length; i++){
-    var myimage = myimages[i]
-    var marker = new google.maps.Marker({
-      position: myimage[2],
+  for (const myicon of icons){
+    const marker = new google.maps.Marker({
+      //assign the json data to each marker
+      position: myicon.position,
       map: map,
-      title: myimage[0],
+      title: myicon.title,
       icon: {
-        url: myimage[1],
+        url: myicon.icon,
         scaledSize: {
           width: 50,
           height: 50
@@ -83,17 +77,19 @@ function setMarkers(map) {
       }
     });
 
+    // This creates a pop up for when we click an icon
     var infowindow = new google.maps.InfoWindow();
-    console.log(myimage[3]);
+    console.log(myicon);
     const popUpBox =
       '<div>' +
-        '<div> HELLO BONJOUR NIHAO ANYEONG </div>' +
+        '<div> HELLO BONJOUR NIHAO ANYEONG FROM ' + myicon.title +'</div>' +
         '<p> (click image for more info) </p>' +
-        '<a href = ' + myimage[3] + '>' +
-        '<img  width = 70%, height = 70% src = ' + myimage[4] + '/>' +
+        '<a href = ' + myicon.link + '>' +
+        '<img  width = 70%, height = 70% src = ' + myicon.image + '/>' +
         '</a>'
       '</div>';
 
+      //This adds a listener, which allows the website to know when an icon is being clicked
     google.maps.event.addListener (marker, 'click', function () {
       infowindow.setContent(popUpBox);
       infowindow.setOptions({maxWidth: 150});
