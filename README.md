@@ -49,7 +49,7 @@ Now we must put put this function in our project so that we can use it later to 
 
 To do this, we simply insert this function within the <script></script> html elements.
 
-```
+```js
 <script>
 async function getIcons() {
   const response = await fetch('https://api.myjson.com/bins/17lqrk'); // <-- here we are retrieving data from our link
@@ -166,7 +166,6 @@ Remember how in our JSON we had elements called 'position', 'title', and 'icon'?
 To display our icons in our map, we must call the ```setMarkers(map)``` function in our ```myMap()``` function. 
 
 ```html
-```html
 <!DOCTYPE html>
 <html>
 <style>
@@ -272,7 +271,7 @@ What this does is store the contents of our InfoWindow in ```popUpBox```, which 
 Our final product should now match the code displayed below. When we test this, a user should be able to click an icon and see an InfoWindow pop up. When they click on the image in the InfoWindow, they will be redirected to a site where they can learn more about that location. 
 
 
-```html
+```html 
 <!DOCTYPE html>
 <html>
 <style>
