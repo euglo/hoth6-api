@@ -1,9 +1,11 @@
 # hoth6-api
 
-# JSON 
-https://api.myjson.com/bins/17lqrk
+In this demo, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. 
 
-If you click this link, you can see an object in JSON. Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this does is allow us to send and receive data in a way that both the server and user can use. JSON works for any programming language, making it super versatile and useful. 
+Let's begin :)
+
+# JSON 
+Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this does is allow us to send and receive data in a way that both the server and user can use. JSON works for any programming language, making it super versatile and useful. 
 
 The way JSON works is by storing an object's data in a string. In our JSON file, the images are stored in an array of JSON objects. As we can see in the code sample below, JSON can store whatever data we give it. 
 
