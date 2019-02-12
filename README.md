@@ -246,10 +246,13 @@ Now let's add more functionality to our icons. Let's add a features so that when
 
 To do this, we will want to use another object from Google Maps' API: an ```InfoWindow```.
 
-To load this into our project, we will store this a new variable we'll call ```infowindow``` .
-    ``` var infowindow = new google.maps.InfoWindow(); ```
+So what is an info window? An info window is what pops on when you click on an icon to get more information about it. Normally info windows display the name and address of a location. But what if we want to personalize info windows for our personalized icons? The API allows us to do this! 
+
+To load this into our project, we will store this a new variable we'll call ```infowindow``` . Our call looks like this:
+
+``` var infowindow = new google.maps.InfoWindow(); ```
     
-We will also need to add a function that will detect whenvever we click on an icon. We will add this inside our icon for-loop: 
+We will also need to add a function that will detect whenever we click on an icon. We will add this code inside our icon for-loop: 
 ```js
     const popUpBox =
       '<div>' +
