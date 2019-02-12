@@ -10,6 +10,7 @@ Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this 
 The way JSON works is by storing an object's data in a string. In our JSON file, the images are stored in an array of JSON objects. As we can see in the code sample below, JSON can store whatever data we give it. 
 
 ```json
+[
 { 
   "title":"UCLA",
   "icon":"http://www.free-icons-download.net/images/cute-small-star-icon-34614.png",
@@ -26,10 +27,11 @@ The way JSON works is by storing an object's data in a string. In our JSON file,
  },
 
 ... more images with icons...
+]
 
 ```
 
-As we can see above, the JSON contains a string versiong of a list of parameters that each store a value. Later on, we'll be accessing these values when using the Google Maps API. 
+As we can see above, the JSON contains a string version of a list of parameters that each store a value. For those familiar with JavaScript, you'll notice that the format of this is similar to the way Objects are declared in JavaScript. Later on, we'll be accessing these values when using the Google Maps API. 
 
 BUT FIRST....How do we even access this JSON data??
 
@@ -66,7 +68,7 @@ Now this is ready to be used in our project :)
 To create your own JSON object and store it in a server for free, you can go to the link here: http://myjson.com/
  
 # Google Maps API Demo
-Now that let's get to the real content: API!
+Now let's get to the real content: API!
 
 In this demo we will be using the Google Maps API to load Google Maps into our personal website and add personalized icons and popups using our JSON. 
 
@@ -121,7 +123,6 @@ function myMap() {
 <script src="https://maps.googleapis.com/maps/api/js?key=OUR_API_KEY&callback=myMap"></script>
 </body>
 </html>
-
 ```
 In the code above, we load in Google Maps' API using the line, replacing OUR_API_KEY with our personal API key. 
 
