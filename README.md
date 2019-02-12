@@ -9,7 +9,7 @@ Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this 
 
 The way JSON works is by storing an object's data in a string. In our JSON file, the images are stored in an array of JSON objects. As we can see in the code sample below, JSON can store whatever data we give it. 
 
-```json
+```
 [
 { 
   "title":"UCLA",
