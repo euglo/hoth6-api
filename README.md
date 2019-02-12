@@ -26,7 +26,7 @@ The way JSON works is by storing an object's data in a string. In our JSON file,
   "link":"http://www.getty.edu/"
  },
 
-... more images with icons...
+... more images loaded in ...
 ]
 
 ```
