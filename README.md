@@ -40,7 +40,7 @@ First we will write a function that loads in our JSON. Here is the code:
 
 ``` js
 async function getIcons() {
-  const response = await fetch('https://api.myjson.com/bins/17lqrk'); // <-- here we are retrieving data the server that stores our json
+  const response = await fetch('https://api.myjson.com/bins/vnn4q'); // <-- here we are retrieving data the server that stores our json
   const icons = await response.json();
   console.log(icons);
   return icons;
@@ -54,7 +54,7 @@ To do this, we simply insert this function within the <script></script> html ele
 ```js
 <script>
 async function getIcons() {
-  const response = await fetch('https://api.myjson.com/bins/17lqrk'); // <-- here we are retrieving data from our link
+  const response = await fetch('https://api.myjson.com/bins/vnn4q'); // <-- here we are retrieving data from our link
   const icons = await response.json();
   console.log(icons);
   return icons;
@@ -96,7 +96,7 @@ p {
 <script>
 //this function will load in our json that stores our images and the information about them
 async function getIcons() {
-  const response = await fetch('https://api.myjson.com/bins/17lqrk');
+  const response = await fetch('https://api.myjson.com/bins/vnn4q');
   const icons = await response.json();
   console.log(icons);
   return icons;
@@ -189,7 +189,7 @@ p {
 <script>
 //this function will load in our json that stores our images and the information about them
 async function getIcons() {
-  const response = await fetch('https://api.myjson.com/bins/17lqrk');
+  const response = await fetch('https://api.myjson.com/bins/vnn4q');
   const icons = await response.json();
   console.log(icons);
   return icons;
@@ -298,7 +298,7 @@ p {
 <script>
 //this function will load in our json that stores our images and the information about them
 async function getIcons() {
-  const response = await fetch('https://api.myjson.com/bins/17lqrk');
+  const response = await fetch('https://api.myjson.com/bins/vnn4q');
   const icons = await response.json();
   console.log(icons);
   return icons;
