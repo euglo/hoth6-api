@@ -28,23 +28,17 @@ async function getIcons() {
 }
 </script>
 
+<!--this loads in our map-->
 <div id="map" style="width:100%;height:400px;"></div>
+
 
 <script>
 
-// this function will create our map and center it at myLatLng
+// in this function will create our map and center it at myLatLng
 function myMap() {
+  //TODO: we need to create our map and center it at a certain position
 
-  //Location of Map
-  var myLatLng = {lat: 34.068921, lng: -118.4473698};
 
-//Map
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: myLatLng
-  });
-
-//this calls our function which is responsible for drawing our markers
 
   setMarkers(map);
 }
@@ -57,42 +51,28 @@ async function setMarkers(map) {
 
   for (const myicon of icons){
     const marker = new google.maps.Marker({
-      //assign the json data to each marker
-      position: myicon.position,
-      map: map,
-      title: myicon.title,
-      icon: {
-        url: myicon.icon,
-        scaledSize: {
-          width: 50,
-          height: 50
-        }
-      }
+      //TODO: assign the json data to each marker
 
-    });
 
-    // This creates a pop up for when we click an icon
+  });
+
+    //TODO: Create a pop up called an InfoWindow whenever we click on an icon
     const infowindow = new google.maps.InfoWindow();
-    console.log(myicon);
+
     const popUpBox =
       '<div>' +
-        '<div> HELLO BONJOUR NIHAO ANYEONG FROM ' + myicon.title +'</div>' +
+        '<div> HELLO BONJOUR NIHAO ANYEONG FROM ' + /*ADD CODE HERE */ +'</div>' +
         '<p> (click image for more info) </p>' +
-        '<a href = ' + myicon.link + '>' +
-        '<img  width = 70%, height = 70% src = ' + myicon.image + '/>' +
+        '<a href = ' + /*ADD CODE HERE */ + '>' +
+        '<img  width = 70%, height = 70% src = ' + /*ADD CODE HERE */+ '/>' +
         '</a>'
       '</div>';
 
-      infowindow.setContent(popUpBox);
-      infowindow.setOptions({maxWidth: 150});
-      //This adds a listener, which allows the website to know when an icon is being clicked
-    google.maps.event.addListener (marker, 'click', function () {
-       infowindow.open(map, this);
-    });
-
-  }//our for-loop ends here
+      //TODO: Add Listener here
+  } //our for-loop ends here
 
 }
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLpxRCBAV58QWZJJN6vQevrEVKd-VWhek&callback=myMap"></script>
