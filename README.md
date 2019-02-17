@@ -262,7 +262,7 @@ So what is an info window? An info window is what pops on when you click on an i
 
 To load this into our project, we will store this a new variable we'll call ```infowindow``` . Our call looks like this:
 
-``` var infowindow = new google.maps.InfoWindow(); ```
+``` const infowindow = new google.maps.InfoWindow(); ```
     
 We will also need to add a function that will detect whenever we click on an icon. We will add this code inside our icon for-loop: 
 ```js
