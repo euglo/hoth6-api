@@ -1,5 +1,8 @@
 # hoth6-api
 
+# Link to the slides
+https://tinyurl.com/apislides
+
 In this demo, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. 
 
 Let's begin :)
