@@ -69,7 +69,15 @@ Now this is ready to be used in our project :)
 # (Optional) Create your own JSON and upload it in a server
 
 To create your own JSON object and store it in a server for free, you can go to the link here: http://myjson.com/
- 
+
+# Get a Google Maps API Key
+
+In order to use Google's API, you must have an API Key, which grants you access to the API. You can get one for free by going to this link: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+You do need to register with a credit card (Google just wants to know you're not a robot), but it is free (Google lists the details of billing when you register). 
+
+However, for now, just use the key we will be providing you with. 
+
 # Google Maps API Demo
 Now let's get to the real content: API!
 
